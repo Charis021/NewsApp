@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
-import Data from "../Data";
 const url = (category) => {
   return `https://newsapi.org/v2/top-headlines?category=${category}&language=en&apiKey=b639e600f420400abac4efbb0720f333`;
 };
 const FrontUrl =
   "https://newsapi.org/v2/top-headlines?country=in&apiKey=b639e600f420400abac4efbb0720f333";
 
-const Header = () => {
+const Header = ({ handleUrl }) => {
   const [category, setCategory] = useState("");
   const [catUrl, setCatUrl] = useState(FrontUrl);
-  const fetch = () => {
-    Data(catUrl);
+
+  const handler = (event) => {
+    setCategory(event.target.name);
   };
+
   ////////
   useEffect(() => {
     if (category) {
@@ -21,13 +22,8 @@ const Header = () => {
   }, [category]);
   ////////
   useEffect(() => {
-    fetch();
-    console.log(catUrl);
+    handleUrl(catUrl);
   }, [catUrl]);
-
-  const handler = (event) => {
-    setCategory(event.target.name);
-  };
   return (
     <div>
       <div>
@@ -43,9 +39,27 @@ const Header = () => {
               </button>
             </li>
             <li>
-              <button name="cricket" onClick={handler}>
+              <button name="sports" onClick={handler}>
                 {" "}
-                Cricket{" "}
+                Sports{" "}
+              </button>
+            </li>
+            <li>
+              <button name="entertainment" onClick={handler}>
+                {" "}
+                Entertainment{" "}
+              </button>
+            </li>
+            <li>
+              <button name="technology" onClick={handler}>
+                {" "}
+                Technology{" "}
+              </button>
+            </li>
+            <li>
+              <button name="science" onClick={handler}>
+                {" "}
+                Science{" "}
               </button>
             </li>
           </ul>

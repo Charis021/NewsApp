@@ -2,8 +2,8 @@ import React from "react";
 import Data from "../Data";
 import "./card.scss";
 
-const Card = () => {
-  const { product } = Data(); //function invoked
+const Card = ({ url }) => {
+  const { product } = Data(url); //function invoked
   const { articles } = product;
   return (
     <div className="main-div">
