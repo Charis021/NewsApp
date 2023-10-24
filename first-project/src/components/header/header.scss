@@ -52,17 +52,18 @@
     }
   }
 }
-@media (min-width: 600px) and (max-width: 1180px) {
+@media (min-width: 481px) and (max-width: 1180px) {
   .heading-div {
     height: 10vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
   }
   .nav-div {
     li {
-      margin: 0;
+      margin: 2%;
       button {
         font-size: 20px;
       }
@@ -73,6 +74,37 @@
         list-style: none;
         text-decoration: none;
         font-size: 20px;
+        color: brown;
+      }
+      a:hover {
+        color: black;
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  .heading-div {
+    height: 8vh;
+    width: 100vw;
+    overflow-x: hidden;
+    h1 {
+      font-family: "Cinzel", serif;
+      font-size: 30px;
+    }
+  }
+  .nav-div {
+    li {
+      margin: 0;
+      button {
+        font-size: 12px;
+      }
+      button:hover {
+        color: black;
+      }
+      a {
+        list-style: none;
+        text-decoration: none;
+        font-size: 12px;
         color: brown;
       }
       a:hover {

@@ -1,8 +1,6 @@
 body {
   background-color: #ffebcd;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .main-div {
   display: flex;
@@ -71,13 +69,52 @@ body {
     }
   }
 }
-@media (min-width: 700px) and (max-width: 1180px) {
+// responsiveness
+@media (min-width: 481px) and (max-width: 1180px) {
+  //for tablets
   body {
     background-color: #ffebcd;
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
   }
   .card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     width: 80vw;
+    box-shadow: none;
+    img {
+      height: 20%;
+      width: 50%;
+      margin-bottom: 4%;
+    }
+    h5 {
+      margin: 2% auto;
+    }
+  }
+}
+@media (max-width: 480px) {
+  //for phones
+  body {
+    overflow-x: hidden;
+  }
+  .card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90vw;
+    box-shadow: none;
+    margin: 2%;
+    padding: 0 2%;
+    text-align: justify;
+    h5 {
+      margin: 2% auto;
+    }
+    img {
+      height: 30%;
+      width: 80%;
+      margin-bottom: 4%;
+    }
   }
 }

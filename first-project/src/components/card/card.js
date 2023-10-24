@@ -2,7 +2,8 @@ import React from "react";
 import Data from "../Data";
 import "./card.scss";
 
-const Card = ({ url }) => { //props destructured
+const Card = ({ url }) => {
+  //props destructured
   const { product } = Data(url); //function invoked
   const { articles } = product;
   return (
@@ -22,7 +23,7 @@ const Card = ({ url }) => { //props destructured
                 {publishedAt}
               </h5>
             </div>
-            <img src={urlToImage} alt="img" />
+            <img src={urlToImage} alt="img not available" />
           </div>
         );
       })}
