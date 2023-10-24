@@ -1,5 +1,8 @@
 body {
   background-color: #ffebcd;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 .main-div {
   display: flex;
@@ -12,6 +15,7 @@ body {
   background-color: #fff8dc;
   border-radius: 1rem;
   display: flex;
+  justify-content: space-around;
   align-items: center;
   box-shadow: -23px 26px 15px -3px rgba(0, 0, 0, 0.1);
 
@@ -19,7 +23,8 @@ body {
     box-sizing: content-box;
     display: flex;
     align-items: center;
-    margin: 19px;
+    float: right;
+    margin: 0px 19px;
     border-radius: 3%;
     height: 100%;
     width: 20%;
@@ -64,5 +69,15 @@ body {
         text-decoration: none;
       }
     }
+  }
+}
+@media (min-width: 700px) and (max-width: 1180px) {
+  body {
+    background-color: #ffebcd;
+    height: 100vh;
+    width: 100vw;
+  }
+  .card {
+    width: 80vw;
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import Data from "../Data";
 import "./card.scss";
 
-const Card = ({ url }) => {
+const Card = ({ url }) => { //props destructured
   const { product } = Data(url); //function invoked
   const { articles } = product;
   return (

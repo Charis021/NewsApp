@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
-const url = (category) => {
-  return `https://newsapi.org/v2/top-headlines?category=${category}&language=en&apiKey=b639e600f420400abac4efbb0720f333`;
+import "./header.scss";
+const url = (cate) => {
+  return `https://newsapi.org/v2/top-headlines?category=${cate}&language=en&apiKey=b639e600f420400abac4efbb0720f333`;
 };
 const FrontUrl =
   "https://newsapi.org/v2/top-headlines?country=in&apiKey=b639e600f420400abac4efbb0720f333";
 
-const Header = ({ handleUrl }) => {
-  const [category, setCategory] = useState("");
+const Header = (props) => {
+  //
+  const { handleUrl } = props;
+  const [category, setCategory] = useState(""); //onclick business
   const [catUrl, setCatUrl] = useState(FrontUrl);
 
   const handler = (event) => {
@@ -16,7 +19,7 @@ const Header = ({ handleUrl }) => {
   ////////
   useEffect(() => {
     if (category) {
-      const newUrl = url(category);
+      const newUrl = url(category); //url function invoked
       setCatUrl(newUrl);
     }
   }, [category]);
@@ -26,12 +29,20 @@ const Header = ({ handleUrl }) => {
   }, [catUrl]);
   return (
     <div>
-      <div>
-        <h1>NEWS APP</h1>
+      <div className="heading-div">
+        <h1>
+          <a href="/">NEWS APP</a>
+        </h1>
       </div>
-      <div>
+      <div className="nav-div">
         <nav>
           <ul>
+            <li>
+              <button>
+                {" "}
+                <a href="/">Home</a>
+              </button>
+            </li>
             <li>
               <button name="business" onClick={handler}>
                 {" "}
